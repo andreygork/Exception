@@ -47,4 +47,10 @@ public class ProductRepositoryTest {
             repo.RemoveById(20);
         });
     }
+    @Test
+    public void shouldGetAlreadyExistsException (){
+        Assertions.assertThrows(AlreadyExistsException.class, () -> {
+            repo.save(product5);
+        });
+    }
 }
